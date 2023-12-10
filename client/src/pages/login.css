@@ -97,6 +97,18 @@ header{
     border-bottom: 2px solid rgba(255, 255, 255, 0.727);
 }
 
+.recupassword {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px; 
+    border: 1px solid #0000;
+    background: none;
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:rgba(255, 255, 255, 0.79);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.811);
+}
+
 .container-login-content input[type="submit"] {
     margin-top: 20px;
     margin-bottom: 20px;

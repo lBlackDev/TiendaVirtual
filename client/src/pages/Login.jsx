@@ -26,6 +26,7 @@ const Login = () => {
                     </label>
                     <input type="password" placeholder="Password" className="password-input"/>
                     <input type="submit" value="Sign In" />
+                    <input type="button" value="Olvidaste tu Clave ?" className="recupassword" />
                     </div>
                     </div>
 
