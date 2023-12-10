@@ -1,5 +1,6 @@
 import "./login.css"
 
+
 const Login = () => {
     return (
         <div className="container-login">
@@ -15,16 +16,17 @@ const Login = () => {
                 </div>
             </header>
             <main>
+                <div className="login-box">
+                    <label>
+                        Login
+                    </label>
                 <div className="container-login-content">
-                    <label type="text" placeholder="Email" >
-                        Email
+                    <label>
+                    <input type="text" placeholder="Email" /> 
                     </label>
-                    <input type="text" placeholder="Email" />
-                    <label type="password" placeholder="Password" >
-                        Password
-                    </label>
-                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Password" className="password-input"/>
                     <input type="submit" value="Sign In" />
+                    </div>
                     </div>
 
             </main>
