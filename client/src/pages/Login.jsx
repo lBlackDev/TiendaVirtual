@@ -10,7 +10,7 @@ const Login = () => {
                     <input type="button" value="Sign Up" />
                 
                     <input type="button" value="Sign In" />
-                     
+                    
                     
                 </div>
             </header>

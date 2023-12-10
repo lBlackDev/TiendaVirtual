@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from datos import data, c_obj
+from routes.login import loginRoute
 
 
 # Creacion de la instanacia de Flask
@@ -10,9 +11,9 @@ objetos = c_obj(data)
 
 #Primera Vista /
 
-@app.route('/')
-def hello_world():
-    return objetos
+@app.route('/login')
+def login():
+    loginRoute()
 
 
 @app.route('/home')

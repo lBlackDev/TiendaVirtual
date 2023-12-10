@@ -41,8 +41,15 @@ header{
     background: #0000;
     border:none;
     border-radius: 8px;
-    padding: 12px 50px 12px 2px ;
+    padding: 5px 10px 5px 5px ;
     font-size: 16px;
+}
+.container-login-btn input[type="button"]:hover,
+.container-login-btn input[type="button"]:focus {
+    background: none; 
+    transform: scale(1.2); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.0); 
+    outline: none; 
 }
 
 .container-login-content { 
@@ -80,7 +87,7 @@ header{
 .container-login-content input[type="submit"] {
     margin-top: 20px;
     margin-bottom: 20px;
-    background: rgba(93, 170, 30, 0.719);
+    background: rgba(190, 83, 83, 0.621);
     padding: 10px;
     border: 1px solid #0000;
     border-radius: 20px;
@@ -93,8 +100,8 @@ header{
 }
 .container-login-content input[type="submit"]:hover,
 .container-login-content input[type="submit"]:focus {
-    background: rgba(93, 170, 30, 0.9); 
-    transform: scale(1.0); 
+    background: rgba(190, 83, 83, 0.784); 
+    transform: scale(1.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
     outline: none; 
 }
