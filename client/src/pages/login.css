@@ -48,12 +48,14 @@ header{
     font-size: 16px;
     cursor: pointer;
 }
+
 .container-login-btn input[type="button"]:hover,
 .container-login-btn input[type="button"]:focus {
     background: none; 
     transform: scale(1.2); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.0); 
     outline: none; 
+    color:rgba(190, 83, 83, 0.784);
 }
 
 
@@ -66,11 +68,13 @@ header{
     color: rgba(255, 255, 255, 0.558);
 }
 
+.login-box h1 {
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.905);
+}
 
 .login-box {
     text-align: center;
-    font-size: 30px;
-    color:white;
     padding-top: 40px;
     border:1px solid rgba(255, 255, 255, 0.727);
     border-radius: 10px;
@@ -115,11 +119,14 @@ header{
     border-bottom: 2px solid rgba(255, 255, 255, 0.811);
     cursor: pointer;
 }
+.recupassword:hover{
+    color: rgba(190, 83, 83, 0.784);
+}
 
 .Sing-in{
     display: flex;
     align-items: center;
-    
+    color:white;
     padding: 10px 37px 10px 50px;
     border-radius: 10px;
     background: rgba(190, 83, 83, 0.784); 
@@ -130,20 +137,19 @@ header{
     flex: 1; /* El texto tomará todo el espacio disponible */
     text-align: center;
     font-size: 16px;
-    color:rgba(255, 255, 255, 0.766);
-    
 }
+
 .Iconright{
     margin-left: 20px; 
     font-size: 23px;
-    color:rgba(255, 255, 255, 0.763);
 }
 
 .Sing-in:hover,
 .Sing-in:focus {
-    background: rgba(190, 83, 83, 0.784); 
+    background: rgba(190, 83, 83, 0.282); 
     transform: scale(1.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
     outline: none; 
+    color:rgba(190, 36, 36, 0.956);
 }
 

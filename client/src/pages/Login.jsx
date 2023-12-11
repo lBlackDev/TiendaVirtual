@@ -18,13 +18,11 @@ const Login = () => {
             </header>
             <main>
                 <div className="login-box">
-                    <label>
-                        Login
-                    </label>
+                        <h1>Login</h1>   
                 <div className="container-login-content">
-                    <label>
+
                     <input type="text" placeholder="Email" /> 
-                    </label>
+
                     <input type="password" placeholder="Password" className="password-input"/>
                     <button className="Sing-in" type="submit" value="Sign In" >
                         <span>Sing in</span>
