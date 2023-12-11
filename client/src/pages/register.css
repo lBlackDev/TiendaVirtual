@@ -23,7 +23,6 @@ header{
     align-items: left;
     flex-direction: row;
     padding-right: 20px;
-    gap: 10px;
 }
 
 .container-login-btn div input{
@@ -46,7 +45,6 @@ header{
     padding:5px 5px 7px 0px;
     border-bottom: 1px outset rgba(255, 255, 255, 0.571);
     font-size: 16px;
-    cursor: pointer;
 }
 .container-login-btn input[type="button"]:hover,
 .container-login-btn input[type="button"]:focus {
@@ -55,7 +53,6 @@ header{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.0); 
     outline: none; 
 }
-
 
 .container-login-content { 
     display: flex;
@@ -102,7 +99,6 @@ header{
     border-bottom: 2px solid rgba(255, 255, 255, 0.727);
 }
 
-
 .recupassword {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -113,34 +109,24 @@ header{
     font-family:Verdana;
     color:rgba(255, 255, 255, 0.79);
     border-bottom: 2px solid rgba(255, 255, 255, 0.811);
-    cursor: pointer;
 }
 
-.Sing-in{
-    display: flex;
-    align-items: center;
-    
-    padding: 10px 37px 10px 50px;
-    border-radius: 10px;
-    background: rgba(190, 83, 83, 0.784); 
-    border: none; 
-    cursor: pointer;
-}
-.Sing-in span{
-    flex: 1; /* El texto tomará todo el espacio disponible */
-    text-align: center;
-    font-size: 16px;
-    color:rgba(255, 255, 255, 0.766);
+.container-login-content input[type="submit"] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgba(190, 83, 83, 0.621);
+    padding: 10px;
+    border: 1px solid #0000;
+    border-radius: 20px;
+    width: 300px;
+    color:whitesmoke;
+    font-size: 20px;
+    font-style:normal;
+    transition: all 0.3s ease;
     
 }
-.Iconright{
-    margin-left: 20px; 
-    font-size: 23px;
-    color:rgba(255, 255, 255, 0.763);
-}
-
-.Sing-in:hover,
-.Sing-in:focus {
+.container-login-content input[type="submit"]:hover,
+.container-login-content input[type="submit"]:focus {
     background: rgba(190, 83, 83, 0.784); 
     transform: scale(1.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 

@@ -1,16 +1,14 @@
-import "./login.css"
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import "./register.css";
 
-
-const Login = () => {
+const Register = () => {
     return (
-        <div className="container-login">
+        <div className="container-register">
             <header>
                 Tienda Virtual AT
                 <div className="container-login-btn">
                     
                     <input type="button" value="Sign Up" />
-                    
+                
                     <input type="button" value="Sign In" />
                     
                     
@@ -19,17 +17,15 @@ const Login = () => {
             <main>
                 <div className="login-box">
                     <label>
-                        Login
+                        <h1>Registro</h1>
                     </label>
-                <div className="container-login-content">
-                    <label>
-                    <input type="text" placeholder="Email" /> 
-                    </label>
+                    <div className="container-login-content">
+
+                        <label>
+                            <input type="text" placeholder="Email" /> 
+                        </label>
                     <input type="password" placeholder="Password" className="password-input"/>
-                    <button className="Sing-in" type="submit" value="Sign In" >
-                        <span>Sing in</span>
-                        <RiArrowRightDoubleFill className="Iconright" />      
-                    </button>
+                    <input type="submit" value="Sign In" />
                     <input type="button" value="Olvidaste tu Clave ?" className="recupassword" />
                     </div>
                     </div>
@@ -40,5 +36,4 @@ const Login = () => {
     )
 }
 
-
-export default Login
+export default Register;
