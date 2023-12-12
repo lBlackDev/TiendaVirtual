@@ -1,49 +1,62 @@
 from flask import Flask, render_template, request, make_response
-from datos import data, c_obj
-from routes.login import login
+from controllers_db import controllers_login
+
+login = controllers_login()
 
 # Creacion de la instanacia de Flask
 app = Flask(__name__)
 
-objetos = c_obj(data)
-
-users = [
-    {
-        "username": "Dieggo",
-        "password": "12345678"
-    }
-]
-#Primera Vista /
-
-@app.route('/login', methods=['POST'])
-def login():
-    name = request.form["username"]
-    password = request.form["password"]
+@app.route('/login/sign-in', methods=['POST'])
+def login_signin():
+    data = request.get_json()
+    
     
 
-    for user in users:
-        if user["username"] == name:
-            if user["password"] == password:
-                log = True
-                break
-            else:
-                log = False
-        else:
-            log = False
-    print(log)
-    response = make_response({
-        "name": "diego"
-    })
-    response.status = 200
+    if data.get("email") and data.get("password"):
+        try:
+            user = login.signin(data["email"], data["password"])
+        except Exception as ex:
+            user = None
+    else:
+        return {
+            "status": 404,
+            "message": "parametros no completos"
+        }
+
+    if user:
+        response = make_response({
+            "status": True,
+            "name": data["name"],
+            "token": ""
+        })
+        response.status = 200
+    else: 
+        response = make_response({
+            "status": 404,
+            "message": "parametros no completos"
+        })
+        response.status = 404
     
     return response
+@app.route('/login/sign-up', methods=['POST'])
+def login_signup():
+    data = request.get_json()
 
-@app.route('/home')
-def home():
-    return
+    if data.get("name") and data.get("email") and data.get("password"):
+        try:
+            user = login.signup(data["name"], data["email"], data["password"])
+        except Exception as ex:
+            user = None
+    else:
+        return {
+            "status": 404,
+            "message": "parametros no completos"
+        }
 
-
-
+    return {
+        "status": 200,
+        "message": "Usuario creado satisfactoriamente"
+    }
 
 if __name__ == '__main__':
     app.run(debug=True)
