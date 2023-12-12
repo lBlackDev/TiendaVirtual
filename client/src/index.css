@@ -1,15 +1,7 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 14px;
-  outline: none;
-  border: none;
-  font-family: 'Courier New', Courier, monospace;
-  overflow: hidden;
+html {
+  font-family: Courier, monospace;
 }
 
 input {
-  font-family: 'Courier New', Courier, monospace;
-  outline: none;
-  border: none;
+  font-family: Courier, monospace;
 }

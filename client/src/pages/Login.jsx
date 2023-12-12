@@ -1,40 +1,58 @@
 import "./login.css"
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { MdOutlineEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { IoCloseSharp } from "react-icons/io5";
+
+
 
 
 const Login = () => {
     return (
-        <div className="container-login">
+        <body>
             <header>
-                Tienda Virtual AT
-                <div className="container-login-btn">
-                    
-                    <input type="button" value="Sign Up" />
-                    
-                    <input type="button" value="Sign In" />
-                    
-                    
-                </div>
+                <h2 className="logo">Tienda AT</h2>
+                <nav className="navigation">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                    <button className="btn-login"> Login</button>
+                    </nav>
             </header>
-            <main>
-                <div className="login-box">
-                        <h1>Login</h1>   
-                <div className="container-login-content">
 
-                    <input type="text" placeholder="Email" /> 
+            <div className="container">
+                <span className="icon-close"><IoCloseSharp />
+</span>
 
-                    <input type="password" placeholder="Password" className="password-input"/>
-                    <button className="Sing-in" type="submit" value="Sign In" >
-                        <span>Enter</span>
-                        <RiArrowRightDoubleFill className="Iconright" />      
-                    </button>
-                    <input type="button" value="Olvidaste tu Clave ?" className="recupassword" />
-                    </div>
-                    </div>
 
-            </main>
-            <footer></footer>
-        </div>
+                <div className="form-box login">
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div className="input-box">
+                            <span className="icon" ><MdOutlineEmail /></span>
+                            <input type="email" required></input>
+                            <label>Email</label>
+                        </div>
+                        <div className="input-box">
+                            <span className="icon" ><RiLockPasswordFill /></span>
+                            <input type="password" required></input>
+                            <label>password</label>
+                        </div>
+                        <div className="remember-forgot">
+                            <label><input type="checkbox"></input>
+                            Recordarme</label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        <button type="submit" className="btn">Login</button>
+                        <div className="login-register">
+                            <p>No tienes una cuenta? <a href="#" className="register-link">Registrar</a></p>
+                        </div>
+                    </form>   
+                </div>
+            </div>
+
+
+        </body>
     )
 }
 
