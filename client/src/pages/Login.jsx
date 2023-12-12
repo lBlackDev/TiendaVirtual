@@ -25,7 +25,7 @@ const Login = () => {
 
                     <input type="password" placeholder="Password" className="password-input"/>
                     <button className="Sing-in" type="submit" value="Sign In" >
-                        <span>Sing in</span>
+                        <span>Enter</span>
                         <RiArrowRightDoubleFill className="Iconright" />      
                     </button>
                     <input type="button" value="Olvidaste tu Clave ?" className="recupassword" />
