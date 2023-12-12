@@ -14,7 +14,8 @@ def login_signin():
 
     if data.get("email") and data.get("password"):
         try:
-            user = login.signin(data["email"], data["password"])
+            user = login.signin(data["email"].lower(), data["password"])
+            print(user)
         except Exception as ex:
             user = None
     else:
@@ -25,27 +26,32 @@ def login_signin():
 
     if user:
         response = make_response({
-            "status": True,
-            "name": data["name"],
+            "status": 200,
+            "name": user[1],
+            "lastname": user[2],
             "token": ""
         })
         response.status = 200
     else: 
         response = make_response({
             "status": 404,
-            "message": "parametros no completos"
+            "message": "Error en el correo o contraseña"
         })
         response.status = 404
     
     return response
+
 @app.route('/login/sign-up', methods=['POST'])
 def login_signup():
     data = request.get_json()
 
     if data.get("name") and data.get("email") and data.get("password"):
+        
         try:
-            user = login.signup(data["name"], data["email"], data["password"])
+            user = login.signup(data["name"].lower(), data["lastname"].lower(), data["email"].lower(), data["password"])
+            print(user)
         except Exception as ex:
+            print("Hubo un error",ex)
             user = None
     else:
         return {

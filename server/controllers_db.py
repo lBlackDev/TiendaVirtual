@@ -12,6 +12,8 @@ class controllers_login():
         cursor.execute('''CREATE TABLE IF NOT EXISTS users
                     (
                        id INTEGER PRIMARY KEY, 
+                       name TEXT,
+                       lastname TEXT,
                        email TEXT UNIQUE, 
                        password TEXT
                     )''')
@@ -36,7 +38,7 @@ class controllers_login():
         #En caso de no encontrar usuario devuelve None
         return row
     
-    def signup(self, email, password):
+    def signup(self, name, lastname, email, password):
         conn = sql.connect('database/db_user.sqlite')
 
         cursor = conn.cursor()
@@ -44,7 +46,7 @@ class controllers_login():
         self.create_table()
         
         try:
-            cursor.execute("INSERT INTO users (email, password) VALUES (?,?)", (email, password))
+            cursor.execute("INSERT INTO users (name, lastname, email, password) VALUES (?,?,?,?)", (name, lastname, email, password))
             conn.commit()
             status_code = 200
             print("Usuario creado satisfactoriamente")
