@@ -1,23 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
-body {
-    display:flex;
+.main-body {
+    display: flex;
     justify-content: center;
     align-items: center;
     background: url("https://i.pinimg.com/originals/70/6b/f4/706bf4ae4ba1eab1cf7a55a0bf1b2ef4.jpg") no-repeat;
     background-size: cover;
     background-position: center;
-    margin-top: 70px;
+    min-height: 100vh;
 }
 
-header{
+.main-header {
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 20px 100px;
     display: flex;
@@ -26,37 +27,36 @@ header{
     z-index: 99;
 }
 
-.logo{
+.logo {
     font-size: 2em;
-    color:white;
-    user-select:none;
+    color: white;
+    user-select: none;
 }
 
 .navigation a {
     position: relative;
     font-size: 1.1em;
-    color:white;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     margin-left: 50px;
 }
 
-.navigation a::after{
+.navigation a::after {
     content: '';
-    position:absolute;
+    position: absolute;
     left: 0;
     bottom: -6px;
-    width:100%;
+    width: 100%;
     height: 3px;
     background: #fff;
     border-radius: 5px;
     transform-origin: right;
     transform: scaleX(0);
     transition: transform .5s;
-
 }
 
-.navigation a:hover::after{
+.navigation a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -65,28 +65,30 @@ header{
     width: 130px;
     height: 50px;
     background: transparent;
-    border:2px solid white;
+    border: 2px solid white;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color:#fff;
+    color: #fff;
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
 }
 
-.navigation .btn-login:hover{
-    background: white;
+.navigation .btn-login:hover {
+    background: rgba(125, 43, 43, 0.811);
     color: #000000;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .container {
-    position:relative;
+    position: relative;
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.505);
     border-radius: 20px;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -96,9 +98,10 @@ header{
     overflow: hidden;
 }
 
+
 .container .form-box {
     width: 100%;
-    padding: 40px;
+    padding: 37px;
 }
 
 .container .icon-close {
@@ -120,16 +123,15 @@ header{
 
 .form-box h2 {
     font-size: 2em;
-    color: white;
+    color: rgba(255, 255, 255, 0.771);
     text-align: center;
 }
 
 .input-box {
     position: relative;
-    width: 100%;
     height: 50px;
     border-bottom: 2px solid black;
-    margin: 30px;  
+    margin: 30px; 
 }
 
 .input-box label {
@@ -170,30 +172,33 @@ header{
     line-height: 57px ;
 }
 
-.remember-forgot {
+.remember-forgot { /*Recordarme*/
     font-size: .9em;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
     justify-content: space-between;
+    padding-left: 20px;
 }
 
-.remember-forgot label input {
+.remember-forgot label input {  /*Checkbox "Recordarme"*/
     align-content: black;
     margin-right: 3px;
 }
 
-.remember-forgot a {
-    color: black;
+.remember-forgot a {  /*Texto Olvidaste la contraseña*/
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    font-weight: 500;
+    position: left;
 }
 
 .remember-forgot a:hover {
     text-decoration: underline;
 }
 
-.btn {
+.btn {  /*Boton de Login*/
     width: 100%;
     height: 45px;
     background: #9b2b2bc0;
@@ -206,9 +211,15 @@ header{
     font-weight: 500;
 }
 
+.btn:hover,
+.btn:focus {
+    background: #9b2b2bc0;
+    transform: scale(1.1);
+}
+
 .login-register {
     font-size: .9em;
-    color:#9b2b2bc0;
+    color:#ffffffc0;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
