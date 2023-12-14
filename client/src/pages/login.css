@@ -104,30 +104,11 @@
     padding: 37px;
 }
 
-.container .icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: rgba(137, 29, 29, 0.607);
-    font-size: 2em;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius:20px ;
-    cursor: pointer;
-    z-index: 1;
-}
-
 .form-box h2 {
     font-size: 2em;
     color: rgba(255, 255, 255, 0.771);
     text-align: center;
 }
-
-
 
 .input-box {
     position: relative;
@@ -174,7 +155,7 @@
     line-height: 57px ;
 }
 
-.remember-forgot { /*Recordarme*/
+.remember { /*Recordarme*/
     font-size: .9em;
     color: rgb(255, 255, 255);
     font-weight: 500;
@@ -184,19 +165,19 @@
     padding-left: 20px;
 }
 
-.remember-forgot label input {  /*Checkbox "Recordarme"*/
+.remember label input {  /*Checkbox "Recordarme"*/
     align-content: black;
     margin-right: 3px;
 }
 
-.remember-forgot a {  /*Texto Olvidaste la contraseña*/
+.forgot a {  /*Texto Olvidaste la contraseña*/
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-weight: 500;
-    position: left;
+    position: relative;
+    margin-left: 44px;
 }
 
-.remember-forgot a:hover {
+.forgot a:hover {
     text-decoration: underline;
 }
 

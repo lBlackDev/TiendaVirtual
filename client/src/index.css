@@ -5,3 +5,7 @@ html {
 input {
   font-family: Courier, monospace;
 }
+
+.hide {
+  display: none;
+}

@@ -1,20 +1,147 @@
 import "./login.css"
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { IoCloseSharp } from "react-icons/io5";
 import { useState } from "react";
+import { SingInApi, SingUpApi } from "../api/login";
 
+const SingUp = ({handleToggleAction}) => {
+    const [dataSingUp, setDataSingUp] = useState({
+        name: "",
+        lastname: "",
+        phone: "",
+        email: "",
+        password: ""
+    })
+    
+    const handleSingUp = () => {
+        
+    }
 
+    return (
+        <div className="container">
+            <div className={'form-box ${action.toLoweCase()}'}> 
+                <h2>Registrate</h2>
+                <form action="#">
+                    {/*campo registro*/}   
+                    <div className="input-box">
+                        <span ClassName="icon"></span>
+                        <input 
+                            type="text"
+                            required 
+                            />
+                        <label>Nombre</label>
+                    </div>
+                    <div className="input-box">
+                        <span ClassName="icon"></span>
+                        <input type="text" required ></input>
+                        <label>Apellido</label>
+                    </div>
+                    <div className="input-box">
+                        <span className="icon"></span>
+                        <input type="tel" required ></input>
+                        <label>Telefono</label>
+                    </div>  
+                    
+                    
+                    {/*Email*/}
+                    <div className="input-box">
+                        <span className="icon"><MdOutlineEmail /></span>
+                        <input type="email" required></input>
+                        <label>Correo</label>
+                    </div>
+                    {/*Password*/}
+                    <div className="input-box">
+                        <span className="icon"><RiLockPasswordFill /></span>
+                        <input type="password" required></input>
+                        <label>Contraseña</label>
+                    </div>
+                    <button type="submit" className="btn" onClick={handleSingUp}>Registrate</button>
+                    <div className="login-register">
+                        <p>Ya tienes cuenta? 
+                        <a style={{marginLeft:5}} href="#" className="register-link" onClick={handleToggleAction}>
+                            Iniciar Sesión
+                        </a>
+                        </p>
+                    </div>
+                </form>   
+            </div>
+        </div>
+    )
+}
 
+const SingIn = ({handleToggleAction}) => {
+    const [data, setData] = useState({
+        email: "",
+        password: ""
+    })
+    
+    console.log(data)
 
+    const handleSingIn = () => {
+        SingInApi(data)
+    }
+    
+    return (
+        <div className="container">
+            <div className={'form-box ${action.toLoweCase()}'}> 
+                <h2>Inicar Sesión</h2>
+                <form action="#">
+                    {/*campo registro*/}
+                    {/*Email*/}
+                    <div className="input-box">
+                        <span className="icon"><MdOutlineEmail /></span>
+                        <input 
+                            type="email" 
+                            onChange={({target}) => setData((pre) => ({...pre, email:target.value}))}
+                            value={data.email}
+                            required 
+                        />
+                        <label>Correo</label>
+                    </div>
+                    {/*Password*/}
+                    <div className="input-box">
+                        <span className="icon"><RiLockPasswordFill /></span>
+                        <input 
+                            type="password" 
+                            onChange={({target}) => setData((pre) => ({...pre, password:target.value}))}
+                            value={data.password}
+                            required
+                        />
+                        <label>Contraseña</label>
+                    </div>
+                    
+                    
+                    <div className="remember">
+                        <label><input type="checkbox"></input>
+                        Recordarme</label>
+                    </div>
+                    
+                    <button type="submit" className="btn" onClick={handleSingIn}>Inicar Sesión</button>
+                    <div className="login-register">
+                        <p>No tienes cuenta?
+                        <a style={{marginLeft:6}} href="#" className="register-link" onClick={handleToggleAction}>
+                            Registrate
+                        </a>
+                        </p>
+                    </div>
+                    <div className={`forgot`}>
+                        <a href="#">Olvidaste tu Contraseña?</a>
+                    </div>
+                </form>   
+            </div>
+        </div>
+    )
+}
 
 const Login = () => {
-    const [action,setAction] = useState ("Login");
-
+    const [singin, setSingin] = useState(true)
+    
     const handleToggleAction = () => {
-        setAction(action === "Login"? "Register" : "Login");
+        console.log("Si funciona")
+        setSingin(!singin)
     }
-        return (
+
+    return (
         <div className="main-body">
             <div className="main-header">
                 <h2 className="logo">Tienda AT</h2>
@@ -24,65 +151,17 @@ const Login = () => {
                     <a href="/services">Services</a>
                     <a href="/contact">Contact</a>
                     <button className="btn-login" onClick={handleToggleAction}>
-                    {action === "Login"? "Registrate" : "Login"}</button>
+                    {singin ? "Registrate" : "Iniciar Sesión"}</button>
                 </nav>
             </div>
-
-            <div className="container">
-                {/*boton X accion de login y registro*/}
-                <span className="icon-close"onClick={handleToggleAction}><IoCloseSharp /></span> 
-
-                <div className={'form-box ${action.toLoweCase()}'}> 
-                    <h2>{action}</h2>
-                    <form action="#">
-                        {/*Email*/}
-                        <div className="input-box">
-                            <span className="icon"><MdOutlineEmail /></span>
-                            <input type="email" required></input>
-                            <label>Email</label>
-                        </div>
-                        {/*Password*/}
-                        <div className="input-box">
-                            <span className="icon"><RiLockPasswordFill /></span>
-                            <input type="password" required></input>
-                            <label>Password</label>
-                        </div>
-                        {/*campo registro*/}
-                        {action === "Register" && (
-                            <>
-                            <div className="input-box">
-                                <span ClassName="icon"></span>
-                                <input type="text" required ></input>
-                                <label>Nombre</label>
-                            </div>
-                            <div className="input-box">
-                                <span className="icon"></span>
-                                <input type="tel" required ></input>
-                                <label>Telefono</label>
-                            </div>  
-                            </>
-                        )}
-                        <div className="remember-forgot">
-                            <label><input type="checkbox"></input>
-                            Recordarme</label>
-                            <a href="#">Forgot password?</a>
-                        </div>
-                        <button type="submit" className="btn">{action}</button>
-                        <div className="login-register">
-                            <p>{action === "Login" ? "No tienes cuenta?" : "Ya tienes cuenta "}
-                            <a href="#" className="register-link" onClick={handleToggleAction}>
-                                {action === "Login"? "Registrate" : "Login"}
-                            </a>
-                            </p>
-                        </div>
-                    </form>   
-                </div>
-            </div>
+            {
+                singin 
+                ?   <SingIn handleToggleAction={handleToggleAction} />
+                :   <SingUp handleToggleAction={handleToggleAction} />
+            }
+            
         </div>
     )
 }
-
-
-
 
 export default Login
