@@ -15,73 +15,9 @@
     min-height: 100vh;
 }
 
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-}
 
-.logo {
-    font-size: 2em;
-    color: white;
-    user-select: none;
-}
 
-.navigation a {
-    position: relative;
-    font-size: 1.1em;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 50px;
-}
 
-.navigation a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .5s;
-}
-
-.navigation a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.navigation .btn-login {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid white;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: .5s;
-}
-
-.navigation .btn-login:hover {
-    background: rgba(125, 43, 43, 0.811);
-    color: #000000;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
 
 .container {
     position: relative;
@@ -114,7 +50,7 @@
     position: relative;
     height: 50px;
     border-bottom: 2px solid black;
-    margin: 30px; 
+    margin: 30px;
 }
 
 .input-box label {
@@ -123,14 +59,14 @@
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color:#000000;
+    color: #000000;
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
 
 }
 
-.input-box input:focus~label, 
+.input-box input:focus~label,
 .input-box input:valid~label {
     top: -5px;
 }
@@ -142,7 +78,7 @@
     border: none;
     outline: none;
     font-size: 1em;
-    color:#000000;
+    color: #000000;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -151,11 +87,12 @@
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color:red;
-    line-height: 57px ;
+    color: red;
+    line-height: 57px;
 }
 
-.remember { /*Recordarme*/
+.remember {
+    /*Recordarme*/
     font-size: .9em;
     color: rgb(255, 255, 255);
     font-weight: 500;
@@ -165,12 +102,14 @@
     padding-left: 20px;
 }
 
-.remember label input {  /*Checkbox "Recordarme"*/
+.remember label input {
+    /*Checkbox "Recordarme"*/
     align-content: black;
     margin-right: 3px;
 }
 
-.forgot a {  /*Texto Olvidaste la contraseña*/
+.forgot a {
+    /*Texto Olvidaste la contraseña*/
     color: rgb(255, 255, 255);
     text-decoration: none;
     position: relative;
@@ -181,7 +120,8 @@
     text-decoration: underline;
 }
 
-.btn {  /*Boton de Login*/
+.btn {
+    /*Boton de Login*/
     width: 100%;
     height: 45px;
     background: #9b2b2bc0;
@@ -202,14 +142,14 @@
 
 .login-register {
     font-size: .9em;
-    color:#ffffffc0;
+    color: #ffffffc0;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
 .login-register p a {
-    color:white;
+    color: white;
     text-decoration: none;
     font-weight: 600;
 }
@@ -217,4 +157,3 @@
 .login-register p a:hover {
     text-decoration: underline;
 }
-
